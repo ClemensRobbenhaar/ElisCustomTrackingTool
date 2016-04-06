@@ -1,0 +1,38 @@
+<!-- language file start -->
+ectt_menu_item#:#Tracking
+tracking#:#Tracking
+ectt_obj_track#:#Object-Tracking
+ectt_com_track#:#Communication-Tracking
+ectt_filter_object_label#:#Filter objecttype
+ectt_filter_option_all#:#all
+ectt_obj_type_crs#:#Courses
+ectt_obj_type_exc#:#Exercises
+ectt_obj_type_lm#:#ILIAS learning modules
+ectt_obj_type_tst#:#Tests
+ectt_obj_type_sahs#:#SCORM learning modules
+ectt_obj_type_htlm#:#HTML learning modules
+ectt_filter_period_label#:#Period filter
+ectt_period_filter_label_use#:#Use filter
+ectt_filter_period_start#:#From
+ectt_filter_period_end#:#To
+ectt_toolbar_submit_create_report_screen#:#Create report
+ectt_toolbar_export#:#Export report
+ectt_object_tracking_list#:#List of tracked objects
+ectt_client_id#:#Client
+ectt_obj_title#:#Objectname
+ectt_usr_ip#:#User IP adress
+ectt_time#:#Time
+ectt_com_track#:#Communication-Tracking
+ectt_filter_com_type_label#:#Category
+ectt_filter_text_search_label#:#Search Content:
+ectt_filter_user_search_label#:#Search Username:
+ectt_filter_text_search_label#:#Suche:
+ectt_communication_tracking_list#:#Tracked Communications
+ectt_com_type#:#Categorie
+ectt_usr_login#:#Username
+ectt_com_content#:#Content
+ectt_com_time#:#Time
+ectt_com_type_forum#:#Forum
+ectt_com_type_mail#:#Mail
+ectt_com_type_chat#:#Chat
+ectt_filter_client_label#:#Client
