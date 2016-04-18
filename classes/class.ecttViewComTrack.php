@@ -15,7 +15,7 @@ class ecttViewComTrack
 	private $UsernameSearchtext		= null;
 
 	private $objects = array(
-		'crs', 'exc', 'lm', 'tst', 'sahs', 'htlm'
+		'crs', 'exc', 'lm', 'tst', 'sahs', 'htlm', 'file', 'grp'
 	);
 
 	private $com_types = array(

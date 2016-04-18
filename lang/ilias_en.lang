@@ -36,3 +36,5 @@ ectt_com_type_forum#:#Forum
 ectt_com_type_mail#:#Mail
 ectt_com_type_chat#:#Chat
 ectt_filter_client_label#:#Client
+ectt_obj_type_grp#:#Groups
+ectt_obj_type_file#:#Files
