@@ -118,6 +118,17 @@ class ecttViewComTrackGUI extends ecttBaseGUI
 		$this->content->setCenterContent($table->getHTML());
 	}
 
+	private function formatUnixTime($ut,$with_time = false)
+	{
+		global $lng;
+		$format = $lng->txt('lang_dateformat');
+		if($with_time)
+		{
+			$format .= (' '.$lng->txt('lang_timeformat_no_sec'));
+		}
+		return date($format,$ut);
+	}
+
 	protected function exportObjectTrackingCmd($iso = false)
 	{
 		$data = $this->viewComTrack->getObjectTrackingData();
@@ -130,7 +141,7 @@ class ecttViewComTrackGUI extends ecttBaseGUI
 
 		foreach($data as $object)
 		{
-			$time = ilFormat::formatUnixTime($object['time'], true);
+			$time = $this->formatUnixTime($object['time'], true);
 
 			if($iso == true)
 			{
@@ -169,7 +180,7 @@ class ecttViewComTrackGUI extends ecttBaseGUI
 
 		foreach($data as $object)
 		{
-			$time = ilFormat::formatUnixTime($object['time'], true);
+			$time = $this->formatUnixTime($object['time'], true);
 
 			if($iso == true)
 			{
