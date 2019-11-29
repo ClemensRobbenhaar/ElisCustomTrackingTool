@@ -369,18 +369,26 @@ class ecttViewComTrack
 
 	public function getFilteredPeriodStartTs()
 	{
+            try {
 		$m =  $this->filtered_period_start['date']['m'];
 		$d = $this->filtered_period_start['date']['d'];
 		$y = $this->filtered_period_start['date']['y'];
 		return mktime(0,0,0,$m,$d,$y);
+            } catch (\Exception $e) {
+                return mktime(0,0,0,01,01,2015);
+            }
 	}
 
 	public function getFilteredPeriodEndTs()
 	{
+            try {
 		$m =  $this->filtered_period_end['date']['m'];
 		$d = $this->filtered_period_end['date']['d'];
 		$y = $this->filtered_period_end['date']['y'];
 		return mktime(0,0,0,$m,$d,$y);
+            } catch (\Exception $e) {
+                return mktime(0,0,0,01,01,2038);
+            }
 	}
 
 	public function getFilteredPeriod()
