@@ -367,13 +367,28 @@ class ecttViewComTrack
 		return $this->filtered_period_active;
 	}
 
+	/**
+	 * it seems the datepicker now returns a string
+	 * in the format "dd.MM.yyyy" instead of a structure
+	 * (maybe JavaScript hook missing ?)
+	 * so we "parse" the date instead and throw a exception
+	 * if the date is invalid
+	 */
+	private function getTimestampFromString($value) {
+		$parts = explode('.', $value);
+		if (count($parts) != 3) {
+			throw new Exception("date " . $value . " is not in format dd.MM.yyyy");
+		}
+		$d = $parts[0];
+		$m = $parts[1];
+		$y = $parts[2];
+		return mktime(0,0,0,$m,$d,$y);
+	}
+
 	public function getFilteredPeriodStartTs()
 	{
             try {
-		$m =  $this->filtered_period_start['date']['m'];
-		$d = $this->filtered_period_start['date']['d'];
-		$y = $this->filtered_period_start['date']['y'];
-		return mktime(0,0,0,$m,$d,$y);
+		return $this->getTimestampFromString($this->filtered_period_start);
             } catch (\Exception $e) {
                 return mktime(0,0,0,01,01,2015);
             }
@@ -382,10 +397,7 @@ class ecttViewComTrack
 	public function getFilteredPeriodEndTs()
 	{
             try {
-		$m =  $this->filtered_period_end['date']['m'];
-		$d = $this->filtered_period_end['date']['d'];
-		$y = $this->filtered_period_end['date']['y'];
-		return mktime(0,0,0,$m,$d,$y);
+		return $this->getTimestampFromString($this->filtered_period_end);
             } catch (\Exception $e) {
                 return mktime(0,0,0,01,01,2038);
             }
